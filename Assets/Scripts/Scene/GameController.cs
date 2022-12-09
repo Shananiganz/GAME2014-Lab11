@@ -6,23 +6,25 @@ public class GameController : MonoBehaviour
 {
     public GameObject onScreenControls;
     public GameObject miniMap;
+    public SoundManager soundManager;
 
     void Awake()
     {
         onScreenControls = GameObject.Find("OnScreenControls");
-
         onScreenControls.SetActive(Application.isMobilePlatform);
-
-        FindObjectOfType<SoundManager>().PlayMusic(Sound.MAIN_MUSIC);
-
+        soundManager = FindObjectOfType<SoundManager>();
         miniMap = GameObject.Find("MiniMap");
+    }
 
+    private void Start()
+    {
         if (miniMap)
         {
             miniMap.SetActive(false);
         }
 
         BulletManager.Instance().BuildBulletPool();
+        soundManager.PlayMusic(Sound.MAIN_MUSIC);
     }
 
     private void Update()

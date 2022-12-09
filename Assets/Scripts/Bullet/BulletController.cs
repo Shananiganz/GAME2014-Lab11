@@ -14,7 +14,6 @@ public class BulletController : MonoBehaviour
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        Activate();
     }
 
     public void Activate()
@@ -55,6 +54,9 @@ public class BulletController : MonoBehaviour
                 DestroyYourself();
                 break;
             case "Prop":
+                DestroyYourself();
+                break;
+            case "Platform":
                 DestroyYourself();
                 break;
         }

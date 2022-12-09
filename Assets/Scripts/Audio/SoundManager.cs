@@ -21,6 +21,8 @@ public class SoundManager : MonoBehaviour
         audioClips.Add(Resources.Load<AudioClip>("Audio/JumpSound"));
         audioClips.Add(Resources.Load<AudioClip>("Audio/HurtSound"));
         audioClips.Add(Resources.Load<AudioClip>("Audio/DeathSound"));
+        audioClips.Add(Resources.Load<AudioClip>("Audio/BulletSound"));
+
         audioClips.Add(Resources.Load<AudioClip>("Audio/MainSoundtrack"));
         audioClips.Add(Resources.Load<AudioClip>("Audio/EndSoundtrack"));
     }
